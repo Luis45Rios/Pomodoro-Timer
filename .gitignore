@@ -1,2 +1,15 @@
+# Carpetas generadas por NetBeans
+/nbproject/private/
+/nbproject/Makefile-*
 /build/
 /dist/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.log
+*.bak
+*.tmp
