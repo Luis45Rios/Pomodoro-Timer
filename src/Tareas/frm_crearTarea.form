@@ -69,18 +69,18 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                  <Component id="cajatxtNombreTarea" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txt_nombreTarea" min="-2" pref="264" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="RadBttenf25" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_enfoque" min="-2" max="-2" attributes="0"/>
                               <Component id="BttIniciar" min="-2" pref="129" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="Radbttenf50" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_enfoque1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -95,13 +95,13 @@
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cajatxtNombreTarea" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="txt_nombreTarea" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RadBttenf25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Radbttenf50" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_enfoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_enfoque1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="BttIniciar" min="-2" pref="55" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
             <Property name="text" type="java.lang.String" value="Tiempo de enfoque:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cajatxtNombreTarea">
+        <Component class="javax.swing.JTextField" name="txt_nombreTarea">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -147,10 +147,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajatxtNombreTareaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_nombreTareaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="RadBttenf25">
+        <Component class="javax.swing.JRadioButton" name="btn_enfoque">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -164,10 +164,10 @@
             <Property name="text" type="java.lang.String" value="25 minutos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadBttenf25ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_enfoqueActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="Radbttenf50">
+        <Component class="javax.swing.JRadioButton" name="btn_enfoque1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -181,7 +181,7 @@
             <Property name="text" type="java.lang.String" value="50 minutos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Radbttenf50ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_enfoque1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BttIniciar">

@@ -6,6 +6,8 @@
 package Tareas;
 
 import Controlador.NuevaTarea;
+import javax.swing.JOptionPane;
+import Temporizador.Pomodoro;
 
 /**
  *
@@ -17,40 +19,33 @@ public class frm_crearTarea extends javax.swing.JDialog {
 
     /**
      * Creates new form FrmNTarea
+     * @param parent
      */
     public frm_crearTarea(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
-        BttIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ejecutarBotonClick(evt);
-            }
-        });
+    }
+
+    frm_crearTarea() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void pasarDatoNombre() {
-        String nombre = cajatxtNombreTarea.getText();
+        String nombre = txt_nombreTarea.getText();
         nuevaTarea.guardarNombre(nombre);
     }
         
     public void pasarDatoEnfoque() {
         Integer tiempo = 0;
-        if (RadBttenf25.isSelected()) {
+        if (btn_enfoque.isSelected()) {
             tiempo = 25;
-        } else if (Radbttenf50.isSelected()) {
+        } else if (btn_enfoque1.isSelected()) {
             tiempo = 50;
         }
         
         nuevaTarea.guardarEnfoque(tiempo);
     }
     
-    private void ejecutarBotonClick(java.awt.event.ActionEvent evt) {
-        pasarDatoNombre();
-        pasarDatoEnfoque();
-        
-        javax.swing.JOptionPane.showMessageDialog(this, "Se ha guardado los datos correctamente");
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,9 +60,9 @@ public class frm_crearTarea extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        cajatxtNombreTarea = new javax.swing.JTextField();
-        RadBttenf25 = new javax.swing.JRadioButton();
-        Radbttenf50 = new javax.swing.JRadioButton();
+        txt_nombreTarea = new javax.swing.JTextField();
+        btn_enfoque = new javax.swing.JRadioButton();
+        btn_enfoque1 = new javax.swing.JRadioButton();
         BttIniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -86,30 +81,30 @@ public class frm_crearTarea extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel4.setText("Tiempo de enfoque:");
 
-        cajatxtNombreTarea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        cajatxtNombreTarea.addActionListener(new java.awt.event.ActionListener() {
+        txt_nombreTarea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        txt_nombreTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajatxtNombreTareaActionPerformed(evt);
+                txt_nombreTareaActionPerformed(evt);
             }
         });
 
-        RadBttenf25.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(RadBttenf25);
-        RadBttenf25.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        RadBttenf25.setText("25 minutos");
-        RadBttenf25.addActionListener(new java.awt.event.ActionListener() {
+        btn_enfoque.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(btn_enfoque);
+        btn_enfoque.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        btn_enfoque.setText("25 minutos");
+        btn_enfoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadBttenf25ActionPerformed(evt);
+                btn_enfoqueActionPerformed(evt);
             }
         });
 
-        Radbttenf50.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(Radbttenf50);
-        Radbttenf50.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        Radbttenf50.setText("50 minutos");
-        Radbttenf50.addActionListener(new java.awt.event.ActionListener() {
+        btn_enfoque1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(btn_enfoque1);
+        btn_enfoque1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        btn_enfoque1.setText("50 minutos");
+        btn_enfoque1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Radbttenf50ActionPerformed(evt);
+                btn_enfoque1ActionPerformed(evt);
             }
         });
 
@@ -141,14 +136,14 @@ public class frm_crearTarea extends javax.swing.JDialog {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(53, 53, 53)
-                                .addComponent(cajatxtNombreTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txt_nombreTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(157, 157, 157))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(RadBttenf25)
+                            .addComponent(btn_enfoque)
                             .addComponent(BttIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(Radbttenf50)
+                        .addComponent(btn_enfoque1)
                         .addGap(167, 167, 167))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -159,12 +154,12 @@ public class frm_crearTarea extends javax.swing.JDialog {
                 .addGap(75, 75, 75)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(cajatxtNombreTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nombreTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(RadBttenf25)
-                    .addComponent(Radbttenf50))
+                    .addComponent(btn_enfoque)
+                    .addComponent(btn_enfoque1))
                 .addGap(29, 29, 29)
                 .addComponent(BttIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -184,22 +179,30 @@ public class frm_crearTarea extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RadBttenf25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadBttenf25ActionPerformed
+    private void btn_enfoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enfoqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RadBttenf25ActionPerformed
+    }//GEN-LAST:event_btn_enfoqueActionPerformed
 
-    private void Radbttenf50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radbttenf50ActionPerformed
+    private void btn_enfoque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enfoque1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Radbttenf50ActionPerformed
+    }//GEN-LAST:event_btn_enfoque1ActionPerformed
 
     private void BttIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttIniciarActionPerformed
         // TODO add your handling code here:
+        if (txt_nombreTarea == null || btn_enfoque == null || btn_enfoque1 == null) {
+            JOptionPane.showMessageDialog(null, "Llene todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            pasarDatoEnfoque();
+            Pomodoro pomodoro = new Pomodoro();
+            pomodoro.setVisible(true);
+            setVisible(false);
+        }
     }//GEN-LAST:event_BttIniciarActionPerformed
 
-    private void cajatxtNombreTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajatxtNombreTareaActionPerformed
+    private void txt_nombreTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreTareaActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_cajatxtNombreTareaActionPerformed
+    }//GEN-LAST:event_txt_nombreTareaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,13 +251,13 @@ public class frm_crearTarea extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BttIniciar;
-    private javax.swing.JRadioButton RadBttenf25;
-    private javax.swing.JRadioButton Radbttenf50;
+    private javax.swing.JRadioButton btn_enfoque;
+    private javax.swing.JRadioButton btn_enfoque1;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField cajatxtNombreTarea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_nombreTarea;
     // End of variables declaration//GEN-END:variables
 }
