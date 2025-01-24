@@ -40,6 +40,8 @@ public class frm_pagInicio extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Inicio");
 
+        jButtonNuevaTarea.setBackground(new java.awt.Color(1, 1, 1));
+        jButtonNuevaTarea.setForeground(new java.awt.Color(1, 1, 1));
         jButtonNuevaTarea.setText("Nueva Tarea");
         jButtonNuevaTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
