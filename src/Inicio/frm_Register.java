@@ -5,6 +5,9 @@
  */
 package Inicio;
 
+import Controlador.FileManagment;
+
+
 /**
  *
  * @author luisr
@@ -215,7 +218,9 @@ public class frm_Register extends javax.swing.JFrame {
 
     private void btn_ccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ccActionPerformed
         // TODO add your handling code here:
-         frm_LogIn log = new frm_LogIn();
+        
+        FileManagment.createFile("./users.txt");
+        frm_LogIn log = new frm_LogIn();
         log.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_ccActionPerformed
