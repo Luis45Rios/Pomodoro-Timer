@@ -5,7 +5,12 @@
  */
 package Inicio;
 
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
+=======
+import Controlador.FileManagment;
+
+>>>>>>> 9cac018b5b81b838242d98aa802f778be053076d
 
 /**
  *
@@ -212,12 +217,6 @@ public class frm_Register extends javax.swing.JFrame {
 
     private void btn_ccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ccActionPerformed
         // TODO add your handling code here:
-        if (txt_newUser.getText().trim().isEmpty() || txt_newPassword.getPassword().length == 0) {
-            JOptionPane.showMessageDialog(null, "Llena todos los campos!", "ERROR", JOptionPane.ERROR);
-        }
-         frm_LogIn log = new frm_LogIn();
-        log.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btn_ccActionPerformed
 
     /**
