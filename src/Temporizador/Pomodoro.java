@@ -5,31 +5,48 @@
  */
 package Temporizador;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
+import Controlador.TareaController;
+import Modelos.Tarea;
 
 /**
  *
  * @author luisr
  */
 public class Pomodoro extends JFrame {
+    private Tarea tarea;
 
     // Componentes de la interfaz
-    private JLabel etiquetaTiempo;  // Muestra el tiempo restante
-    private JLabel etiquetaEstado;  // Muestra si es tiempo de enfoque o descanso
-    private JButton botonControl;  // Botón para iniciar/pausar/reanudar el temporizador
+    private JLabel etiquetaTiempo; // Muestra el tiempo restante
+    private JLabel etiquetaEstado; // Muestra si es tiempo de enfoque o descanso
+    private JButton botonControl; // Botón para iniciar/pausar/reanudar el temporizador
     private JButton botonFinalizar; // Botón para finalizar la tarea
 
     // Variables para el temporizador
-    private Timer temporizador;     // Objeto Timer para controlar el tiempo
-    private int tiempoRestante;     // Tiempo restante en segundos
+    private Timer temporizador; // Objeto Timer para controlar el tiempo
+    private int tiempoRestante; // Tiempo restante en segundos
     private boolean enTiempoEnfoque; // Indica si está en tiempo de enfoque o descanso
-    private boolean corriendo;      // Indica si el temporizador está en ejecución
-    private int tiempoTotal;        // Tiempo total acumulado en segundos
+    private boolean corriendo; // Indica si el temporizador está en ejecución
+    private int tiempoTotal; // Tiempo total acumulado en segundos
+    private Integer numeroPomodoros;
+    private TareaController tareaController = new TareaController();
 
-    public Pomodoro() {
+    public Pomodoro(Tarea tarea) {
+        this.tarea = tarea;
         // Configuración de la ventana principal
         setTitle("Temporizador Pomodoro");
         setSize(400, 250);
@@ -39,8 +56,9 @@ public class Pomodoro extends JFrame {
         getContentPane().setBackground(new Color(40, 40, 40)); // Fondo oscuro
 
         // Etiqueta para mostrar el tiempo restante
-//        etiquetaTiempo = new JLabel("25:00", SwingConstants.CENTER);
-          etiquetaTiempo = new JLabel("01:00", SwingConstants.CENTER);
+        // etiquetaTiempo = new JLabel("25:00", SwingConstants.CENTER);
+        String tiempo = this.tarea.getTiempoEnfoque() + ":00";
+        etiquetaTiempo = new JLabel(tiempo, SwingConstants.CENTER);
 
         etiquetaTiempo.setFont(new Font("Arial", Font.BOLD, 48));
         etiquetaTiempo.setForeground(Color.WHITE); // Color del texto
@@ -80,6 +98,7 @@ public class Pomodoro extends JFrame {
         enTiempoEnfoque = true; // Comienza con tiempo de enfoque
         corriendo = false; // El temporizador no está corriendo al principio
         tiempoTotal = 0; // Inicializa el tiempo total a 0
+        numeroPomodoros = this.tarea.getNumeroPomodoros();
     }
 
     // Método para controlar el temporizador (iniciar, pausar, reanudar)
@@ -95,7 +114,8 @@ public class Pomodoro extends JFrame {
     private void iniciarTemporizador() {
         if (!corriendo) {
             if (tiempoRestante == 0) { // Configurar tiempo inicial si es la primera vez
-                tiempoRestante = enTiempoEnfoque ? 1 * 60 : 1 * 60; // 25 min enfoque, 5 descanso
+                // Multiplicar por 60 para convertir minutos a segundos
+                tiempoRestante = enTiempoEnfoque ? this.tarea.getTiempoEnfoque() * 60 : 5 * 60;
             }
             corriendo = true;
             botonControl.setText("Pausar");
@@ -127,6 +147,12 @@ public class Pomodoro extends JFrame {
 
     // Método para finalizar un ciclo (enfoque o descanso)
     private void terminarCiclo() {
+        // Aumentar el número de pomodoros si es tiempo de enfoque
+        if (enTiempoEnfoque) {
+            numeroPomodoros++;
+            tarea.setNumeroPomodoros(numeroPomodoros);
+            tareaController.actualizarTarea(tarea);
+        }
         temporizador.cancel();
         temporizador = new Timer(); // Reinicia el objeto Timer
         enTiempoEnfoque = !enTiempoEnfoque; // Cambia entre enfoque y descanso
@@ -136,7 +162,8 @@ public class Pomodoro extends JFrame {
         botonControl.setBackground(new Color(60, 179, 113)); // Botón verde
         etiquetaTiempo.setText(enTiempoEnfoque ? "25:00" : "05:00");
         etiquetaEstado.setText(enTiempoEnfoque ? "Tiempo de enfoque" : "Tiempo de descanso");
-        getContentPane().setBackground(enTiempoEnfoque ? new Color(40, 40, 40) : new Color(70, 130, 180)); // Cambia el fondo
+        getContentPane().setBackground(enTiempoEnfoque ? new Color(40, 40, 40) : new Color(70, 130, 180)); // Cambia el
+                                                                                                           // fondo
         iniciarTemporizador(); // Inicia automáticamente el siguiente ciclo
     }
 
@@ -163,7 +190,7 @@ public class Pomodoro extends JFrame {
     // Método principal
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            Pomodoro pomodoroTimer = new Pomodoro();
+            Pomodoro pomodoroTimer = new Pomodoro(null);
             pomodoroTimer.setVisible(true); // Asegúrate de que esta línea no esté comentada
         });
     }

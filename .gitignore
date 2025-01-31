@@ -13,3 +13,7 @@ desktop.ini
 *.log
 *.bak
 *.tmp
+
+
+# text files
+*.txt
