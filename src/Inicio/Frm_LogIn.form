@@ -91,9 +91,9 @@
               <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                  <Component id="bntLogIn1" min="-2" pref="109" max="-2" attributes="0"/>
+                  <Component id="bntLogIn" min="-2" pref="109" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                  <Component id="btnRegister1" min="-2" pref="106" max="-2" attributes="0"/>
+                  <Component id="btnRegister" min="-2" pref="106" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -116,8 +116,8 @@
                   <Component id="background1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="39" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bntLogIn1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="btnRegister1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="bntLogIn" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btnRegister" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
@@ -148,8 +148,8 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textFieldPassword1" pref="176" max="32767" attributes="0"/>
-                          <Component id="textFieldUsername1" max="32767" attributes="0"/>
+                          <Component id="textFieldPassword" pref="176" max="32767" attributes="0"/>
+                          <Component id="textFieldUsername" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -160,7 +160,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textFieldUsername1" max="32767" attributes="0"/>
+                          <Component id="textFieldUsername" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -169,7 +169,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jPanel10" max="32767" attributes="0"/>
-                          <Component id="textFieldPassword1" max="32767" attributes="0"/>
+                          <Component id="textFieldPassword" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
@@ -220,7 +220,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="textFieldUsername1">
+            <Component class="javax.swing.JTextField" name="textFieldUsername">
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel10">
               <Properties>
@@ -265,19 +265,16 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JPasswordField" name="textFieldPassword1">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldPassword1ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JPasswordField" name="textFieldPassword">
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnRegister1">
+        <Component class="javax.swing.JButton" name="btnRegister">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registrarse"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegister1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -291,12 +288,12 @@
             <Property name="text" type="java.lang.String" value="Bienvenido usuario, inicie sesion para continuar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="bntLogIn1">
+        <Component class="javax.swing.JButton" name="bntLogIn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Iniciar Sesion"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntLogIn1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntLogInActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel4">
